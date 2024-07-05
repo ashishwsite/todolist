@@ -1,17 +1,8 @@
 import './App.css';
-import Header from "./MyComponents/Header";
 import { Todos } from "./MyComponents/Todos";
 import { Footer } from "./MyComponents/Footer";
 import { AddTodo } from "./MyComponents/AddTodo";
-import { About } from "./MyComponents/About";
-import Welcome from './MyComponents/Welcome';
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
-
 function App() {
   let initTodo;
   if (localStorage.getItem("todos") === null) {
@@ -60,21 +51,12 @@ function App() {
 
   return ( 
     <> 
-    <Router>
-      <Header title="My Todos List" searchBar={false} /> 
+  
+      <h1 style={{backgroundColor:'grey' ,fontStyle:'oblique',fontFamily:'fantasy'}}>TodoList</h1>
       <AddTodo addTodo={addTodo} />
       <Todos todos={todos} onDelete={onDelete}/>
-      <Routes>
-        <>
-          <Route path="/" element={<Welcome />}></Route>
-          <Route  path="/view" element={<Todos todos={todos} onDelete={onDelete}/>}></Route>
-          <Route  path="/add"  element={<AddTodo addTodo={addTodo} />}></Route>
-          <Route  path="/delete" element={<Todos todos={todos} onDelete={onDelete}  />}></Route>
-          <Route path="/about" element={ <About />}> </Route> 
-          </>
-      </Routes> 
-      <Footer />
-    </Router>
+      <Footer/>
+  
     </>
   );
 }

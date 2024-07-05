@@ -19,7 +19,7 @@ export const AddTodo = ({ addTodo }) => {
     }
     return (
         <div className="container my-3">
-            <h3>Add a Todo</h3>
+            <h3 style={{textAlign:'center',color:'red'}}>ADD NEW TODO</h3>
             <form onSubmit={submit}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Todo Title</label>
