@@ -26,6 +26,7 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 
+
   const addTodo = (title, desc) => {
     console.log("I am adding this todo", title, desc)
     let sno;
